@@ -1,0 +1,58 @@
+What is this about ?
+********************
+
+Flush a specific file to disk but not necessarily the whole disk and every disk on the system.
+
+The point is that if you use the 'sync' it will schedule a flush for every disk on the system,
+this can take a long time -- this allows you to flush just one file.
+This allows you to just flush the data (ie not the metadata).
+
+Why: if system service is interrupted at the wrong moment (eg crash or power fail)
+what is in the filesystem on reboot might inconsistent. This is especially
+true with files in the process of being updated; eg where a modified copy of a
+file is created that is then renamed over the original.
+Flushing blocks to disk can help to avoid problems.
+This is a command line interface to the fsync(2) and fdatasync(2) system calls.
+
+See:
+	http://lwn.net/Articles/351422/
+
+Installation
+************
+
+Compile and install somewhere, this is a single simple program.
+
+Keeping up to date
+******************
+
+You may find newer versions of this software at:
+
+	http://www.phcomp.co.uk/downloads.php
+
+Where you will also find references to email lists that relate to this software.
+
+
+Contributing
+************
+
+Fsync is free software (see the license). Free software grows and becomes more
+powerful and useful as those who gain by using it contribute their changes back
+to the original author.
+
+Contributions to this software are welcome. Please email the author the following:
+
+* your name & email address
+* your affiliation (company/institute/...) if any
+* the code
+* documentation
+* a statement that you are legally able to release the code and documentation
+* a statement transfering copyright to the Author below giving permission that it
+  may be redistributed as part of UserAdmin under an appropriate license
+
+Contributions will be acknowledged in the Contributors file that accompanies this
+software. If you do not want to be acknowledged please make that clear.
+
+The author will be pleased to receive your comments, good or bad.
+
+
+SCCS: @(#)README	1.1 11/14/11 22:20:17

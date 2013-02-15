@@ -1,0 +1,66 @@
+.TH fsync "1" "Nov 2011" "fsync 1.1" "User Commands"
+.\"
+.SH NAME
+fsync \- Flush a file to disk
+.\"
+.SH SYNOPSIS
+.B fsync
+[\fIoption\fR]...
+.\"
+.SH DESCRIPTION
+.\"
+.PP
+\fIfsync\fR will flush a specific file to disk without necessarily flushing the whole disk and every disk on the system.
+.PP
+The point is that if you use the '\fIsync\fR' it will schedule a flush for every disk on the system,
+this can take a long time -- this allows you to flush just one file.
+This allows you to just flush the data (ie not the metadata).
+.PP
+Why: if system service is interrupted at the wrong moment (eg crash or power fail)
+what is in the filesystem on reboot might inconsistent. This is especially
+true with files in the process of being updated; eg where a modified copy of a
+file is created that is then renamed over the original.
+Flushing blocks to disk can help to avoid problems.
+.PP
+This is a command line interface to the \fIfsync(2)\fR and \fIfdatasync(2)\fR system calls.
+.PP
+See:
+.nf
+http://lwn.net/Articles/351422/
+.fi
+.\"
+.SH OPTIONS
+.\"
+.PP
+.TP
+\fB-d\fR
+do not flush metadata (fdatasync()).
+.TP
+\fB-\q\fR
+quiet: do not report errors (eg file open fails), still set exit code.
+.TP
+\fB-v\fR
+Verbose - send log messages to stderr.
+.TP
+\fB-x\fR
+eXplain, gives a usage message.
+.\"
+.SH EXAMPLE
+.\"
+.PP
+.nf
+fsync /etc/passwd
+.fi
+.\"
+.PP
+.\"
+.SH AUTHOR
+Written by Alain Williams <addw@phcomp.co.uk>
+.\"
+.SH COPYRIGHT
+Copyright \(co Parliament Hill Computers
+.br
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+.\" SCCS: @(#)fsync.1	1.1 11/14/11 22:30:30
