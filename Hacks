@@ -1,0 +1,36 @@
+
+addw: Thu 10 Sep 2009 12:51
+fsync.c:\tInitial Create.
+
+addw: Thu 10 Sep 2009 13:37
+fsync.c: Doesn't work on directories unless it is opened readonly
+
+addw: Mon 14 Nov 2011 22:20
+README:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:30
+fsync.1:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:30
+Makefile:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:33
+Contributors:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:37
+Makefile:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:38
+fsync.spec:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:45
+configure.in:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:46
+fsync.c: Include config.h
+
+addw: Mon 14 Nov 2011 22:48
+fsync.spec:\tInitial Create.
+
+addw: Mon 14 Nov 2011 22:48
+fsync.spec:\tInitial Create.

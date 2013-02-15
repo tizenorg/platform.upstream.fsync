@@ -1,0 +1,19 @@
+# Process this file with autoconf to produce a configure script.
+# SCCS: @(#)configure.in	1.1 11/14/11 22:45:39
+AC_PREREQ(2.59)
+AC_INIT([fsync], 1.1, [addw@phcomp.co.uk])
+AC_CONFIG_SRCDIR([fsync.c])
+AC_CONFIG_HEADER([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([fcntl.h stdlib.h string.h strings.h unistd.h errno.h sys/types.h sys/stat.h])
+
+# Checks for library functions.
+AC_CHECK_FUNCS([strerror open fdatasync fsync])
+AC_OUTPUT
