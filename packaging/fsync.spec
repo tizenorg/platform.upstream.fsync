@@ -36,6 +36,7 @@ make DESTDIR=$RPM_BUILD_ROOT%{_prefix} VERSION=%{version} install
 
 %remove_docs
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %manifest %{name}.manifest
 %{_bindir}/fsync
